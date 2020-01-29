@@ -36,7 +36,7 @@ function drawMoon(phase){
 	ambientMaterial(250);
 	lightFalloff(1.0, 1.0, 1.0)
 		directionalLight(250, 250, 128, cos(x), 0, sin(x));
-		ambientLight(10,10,0);
+		ambientLight(100,100,0);
 		noStroke();
 		texture(moonTexture);
 		sphere(moonsize);
