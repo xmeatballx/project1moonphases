@@ -2,6 +2,8 @@ var moonsize=160;
 var moonPhase=0;
 var x=0;
 let moonTexture;
+let star{};
+let numStars=100;
 
 function preload(){
 	moonTexture = loadImage ('moontexture.jpeg');
@@ -10,6 +12,11 @@ function preload(){
 function setup(){
 	createCanvas(630,600,WEBGL);
 	background(0);
+
+	for (int i =0;i<numStars;i++){
+     star{i} = new star;
+	}
+
 	input = createInput();
   input.position(20, 35);
 
@@ -22,7 +29,9 @@ function setup(){
 
 function draw(){
   drawMoon(moonPhase);
-		
+  for (int i =0;i<numStars;i++){
+  star[i].display;
+  }
 }
 
 function phaseSet(){
@@ -41,6 +50,19 @@ function drawMoon(phase){
 		texture(moonTexture);
 		sphere(moonsize);
 		pop();
+}
+
+class star{
+	constructor(){
+		this.x = random(width);
+		this.y = random(height);
+		this.z = random(-30,-100);
+		this.diameter = random(10);
+	}
+
+	display(){
+		ellipse(this.x,this.y,this.z,this.diameter,this.diameter);
+	}
 }
 
 
