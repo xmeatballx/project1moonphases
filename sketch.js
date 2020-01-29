@@ -14,7 +14,7 @@ function setup(){
 	background(0);
 
 	for (let i =0;i<numStars;i++){
-     star[i] = new star;
+     star.push = (new star());
 	}
 
 	input = createInput();
