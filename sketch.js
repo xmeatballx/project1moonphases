@@ -13,7 +13,7 @@ function setup(){
 	createCanvas(630,600,WEBGL);
 	background(0);
 
-	for (int i =0;i<numStars;i++){
+	for (let i =0;i<numStars;i++){
      star[i] = new star;
 	}
 
@@ -29,7 +29,7 @@ function setup(){
 
 function draw(){
   drawMoon(moonPhase);
-  for (int i =0;i<numStars;i++){
+  for (let i =0;i<numStars;i++){
   star[i].display();
   }
 }
