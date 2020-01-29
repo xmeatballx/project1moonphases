@@ -2,7 +2,7 @@ var moonsize=160;
 var moonPhase=0;
 var x=0;
 let moonTexture;
-let star[];
+let star = [];
 let numStars=100;
 
 function preload(){
