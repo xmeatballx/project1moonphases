@@ -14,7 +14,7 @@ function setup(){
 	background(0);
 
 	for (int i =0;i<numStars;i++){
-     star{i} = new star;
+     star[i] = new star;
 	}
 
 	input = createInput();
