@@ -14,7 +14,7 @@ function setup(){
 	background(0);
 
 	for (let i =0;i<numStars;i++){
-     star.push(new star());
+     star.push(new stars());
 	}
 
 	input = createInput();
@@ -30,7 +30,7 @@ function setup(){
 function draw(){
   drawMoon(moonPhase);
   for (let i =0;i<numStars;i++){
-  star[i].display();
+  stars[i].display();
   }
 }
 
@@ -52,7 +52,7 @@ function drawMoon(phase){
 		pop();
 }
 
-class star{
+class stars{
 	constructor(){
 		this.x = random(width);
 		this.y = random(height);
