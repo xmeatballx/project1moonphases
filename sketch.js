@@ -2,11 +2,13 @@ var moonsize=160;
 var moonPhase=0;
 var x=0;
 let moonTexture;
+let arrowButton;
 let star = [];
 let numStars=5000;
 
 function preload(){
 	moonTexture = loadImage ('moontexture.jpeg');
+	arrowButton = loadImage ('arrow.png');
 }
 
 function setup(){
@@ -15,11 +17,9 @@ function setup(){
 
 	for (let i =0;i<numStars;i++){
      star.push(new stars());
+     star[i].display();
 	}
 
-	    for (let i =0;i<numStars;i++){
-  star[i].display();
-	}	
 
 	input = createInput();
   input.position(20, 35);
@@ -27,6 +27,8 @@ function setup(){
   button = createButton('submit');
   button.position(input.x + input.width, 35);
   button.mousePressed(phaseSet);
+
+  image(arrowButton,button.x + button.width, 35);
 }
 
 function draw(){
