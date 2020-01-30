@@ -62,7 +62,7 @@ class stars{
 
 	display(){
 		fill(255,255,255);
-		translate(width/2,height/2,this.z);
+		translate(-100,-100,this.z);
 		ellipse(this.x,this.y,this.diameter,this.diameter);
 	}
 }
