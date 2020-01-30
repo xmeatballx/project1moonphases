@@ -17,25 +17,25 @@ function setup(){
      star.push(new stars());
 	}
 
+	    for (let i =0;i<numStars;i++){
+  star[i].display();
+	}	
+
 	input = createInput();
   input.position(20, 35);
 
   button = createButton('submit');
   button.position(input.x + input.width, 35);
   button.mousePressed(phaseSet);
-	//noLoop();
+
+
 
 }
 
-function draw(){
-  drawMoon(moonPhase);
-  for (let i =0;i<numStars;i++){
-  star[i].display();
-  }
-}
 
 function phaseSet(){
 	moonPhase = int(input.value());
+	drawMoon(moonPhase);
 }
 
 function drawMoon(phase){
