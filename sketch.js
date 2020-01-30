@@ -28,7 +28,7 @@ function setup(){
 }
 
 function draw(){
-  //drawMoon(moonPhase);
+  drawMoon(moonPhase);
   for (let i =0;i<numStars;i++){
   star[i].display();
   }
