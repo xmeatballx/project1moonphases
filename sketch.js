@@ -3,7 +3,7 @@ var moonPhase=0;
 var x=0;
 let moonTexture;
 let star = [];
-let numStars=500;
+let numStars=1000;
 
 function preload(){
 	moonTexture = loadImage ('moontexture.jpeg');
