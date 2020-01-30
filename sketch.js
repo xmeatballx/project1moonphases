@@ -54,8 +54,8 @@ function drawMoon(phase){
 
 class stars{
 	constructor(){
-		this.x = random(width);
-		this.y = random(height);
+		this.x = random(-width/2,width/2);
+		this.y = random(-height/2,height/2);
 		this.z = random(-30,-50);
 		this.diameter = random(10);
 	}
@@ -63,7 +63,7 @@ class stars{
 	display(){
 		fill(255,255,255);
 		noStroke();
-		translate(-20,0,this.z);
+		translate(0,0,this.z);
 		ellipse(this.x,this.y,this.diameter,this.diameter);
 	}
 }
