@@ -56,7 +56,7 @@ class stars{
 	constructor(){
 		this.x = random(width);
 		this.y = random(height);
-		this.z = random(-30,-100);
+		this.z = random(-30,-50);
 		this.diameter = random(10);
 	}
 
