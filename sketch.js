@@ -54,8 +54,8 @@ function drawMoon(phase){
 
 class stars{
 	constructor(){
-		this.x = random(-width/2,width/2);
-		this.y = random(-height/2,height/2);
+		this.x = random(-width,width);
+		this.y = random(-height,height);
 		this.z = random(-30,-50);
 		this.diameter = random(10);
 	}
