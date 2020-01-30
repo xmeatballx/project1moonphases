@@ -3,7 +3,7 @@ var moonPhase=0;
 var x=0;
 let moonTexture;
 let star = [];
-let numStars=1000;
+let numStars=5000;
 
 function preload(){
 	moonTexture = loadImage ('moontexture.jpeg');
@@ -54,8 +54,8 @@ function drawMoon(phase){
 
 class stars{
 	constructor(){
-		this.x = random(-width/2,width/2);
-		this.y = random(-height/2,height/2);
+		this.x = random(-width/4,width/4);
+		this.y = random(-height/4,height/4);
 		this.z = random(-30,-50);
 		this.diameter = random(10);
 	}
