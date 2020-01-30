@@ -63,7 +63,7 @@ class stars{
 	display(){
 		fill(255,255,255);
 		noStroke();
-		translate(-width/4,0,this.z);
+		translate(-20,0,this.z);
 		ellipse(this.x,this.y,this.diameter,this.diameter);
 	}
 }
