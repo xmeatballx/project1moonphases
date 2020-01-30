@@ -8,7 +8,7 @@ let numStars=5000;
 
 function preload(){
 	moonTexture = loadImage ('moontexture.jpeg');
-	arrowButton = loadImage ('arrow.png');
+	//arrowButton = loadImage ('arrow.png');
 }
 
 function setup(){
@@ -28,7 +28,7 @@ function setup(){
   button.position(input.x + input.width, 35);
   button.mousePressed(phaseSet);
 
-  image(arrowButton,button.x + button.width, 35);
+  //image(arrowButton,button.x + button.width, 35);
 }
 
 function draw(){
