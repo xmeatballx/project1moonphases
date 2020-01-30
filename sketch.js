@@ -27,15 +27,14 @@ function setup(){
   button = createButton('submit');
   button.position(input.x + input.width, 35);
   button.mousePressed(phaseSet);
-
-
-
 }
 
+function draw(){
+drawMoon(moonPhase);
+}
 
 function phaseSet(){
 	moonPhase = int(input.value());
-	drawMoon(moonPhase);
 }
 
 function drawMoon(phase){
