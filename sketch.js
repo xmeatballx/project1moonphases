@@ -3,7 +3,7 @@ var moonPhase=0;
 var x=0;
 let moonTexture;
 let star = [];
-let numStars=10000;
+let numStars=500;
 
 function preload(){
 	moonTexture = loadImage ('moontexture.jpeg');
@@ -62,7 +62,7 @@ class stars{
 
 	display(){
 		fill(255,255,255);
-		translate(-100,-100,this.z);
+		translate(0,0,this.z);
 		ellipse(this.x,this.y,this.diameter,this.diameter);
 	}
 }
