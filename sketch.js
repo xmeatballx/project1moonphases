@@ -1,19 +1,23 @@
 var moonsize=160;
 var moonPhase=0;
+let prevPhase;
 var x=0;
 let moonTexture;
 let arrowButton;
 let star = [];
 let numStars=5000;
+let myFont;
 
 function preload(){
 	moonTexture = loadImage ('moontexture.jpeg');
-	//arrowButton = loadImage ('arrow.png');
+	arrowButton = loadImage ('arrow.png');
+	myFont=loadFont('SyrComadiabene.otf')
 }
 
 function setup(){
 	createCanvas(630,600,WEBGL);
 	background(0);
+
 
 	for (let i =0;i<numStars;i++){
      star.push(new stars());
@@ -27,20 +31,30 @@ function setup(){
   button = createButton('submit');
   button.position(input.x + input.width, 35);
   button.mousePressed(phaseSet);
-
-  //image(arrowButton,button.x + button.width, 35);
 }
 
 function draw(){
-drawMoon(moonPhase);
+drawText();
+drawMoon(int(moonPhase));
+drawButtons();
 }
 
 function phaseSet(){
 	moonPhase = int(input.value());
 }
 
+function mousePressed(){
+		if (mouseX>90 && mouseX<150 && mouseY>80 && mouseY<130 && moonPhase<30){
+			moonPhase++;
+	}
+
+	    if (mouseX>45 && mouseX<90 && mouseY>80 && mouseY<130 && moonPhase>-1){
+	    	moonPhase--;
+	    }
+}
+
 function drawMoon(phase){
-	x=map((phase/10)+1.5,0,1,-1,1);
+	x=map((phase/10)+1.3,0,1,-1,1);
 	push();
 	ortho();
 	ambientMaterial(250);
@@ -51,8 +65,28 @@ function drawMoon(phase){
 		texture(moonTexture);
 		sphere(moonsize);
 		pop();
+		prevPhase=phase;
 }
 
+function drawText(){
+	textSize(72);
+		textFont(myFont);
+		fill(255);
+		text(int(moonPhase), -260, -100);
+	if (prevPhase!=moonPhase){
+		background(0);
+		drawMoon(int(moonPhase));
+		for (let i =0;i<numStars;i++){
+     star[i].display();
+ }
+	}
+}
+
+function drawButtons(){
+ image(arrowButton,-220, -220,50,50);
+scale(1,-1);
+image(arrowButton,-270, 170,50,50);
+}
 class stars{
 	constructor(){
 		this.x = random(-width*2,width*2);
