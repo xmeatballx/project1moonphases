@@ -8,6 +8,7 @@ let star = [];
 let numStars=5000;
 let myFont;
 
+//load texture, arrow images, and font for moon phase number display
 function preload(){
 	moonTexture = loadImage ('moontexture.jpeg');
 	arrowButton = loadImage ('arrow.png');
@@ -15,21 +16,23 @@ function preload(){
 }
 
 function setup(){
-	createCanvas(630,600,WEBGL);
+	createCanvas(730,700,WEBGL);
 	background(0);
 
-
+//create and draw an array of star objects
 	for (let i =0;i<numStars;i++){
      star.push(new stars());
      star[i].display();
 	}
 
-
+//draw input box and submit button using DOM library
 	input = createInput();
   input.position(20, 35);
 
   button = createButton('submit');
   button.position(input.x + input.width, 35);
+
+  //set phase every time a value is submitted via button
   button.mousePressed(phaseSet);
 }
 
@@ -39,10 +42,12 @@ drawMoon(int(moonPhase));
 drawButtons();
 }
 
+//set value from input box as moonPhase
 function phaseSet(){
 	moonPhase = int(input.value());
 }
 
+//detect arrow button presses
 function mousePressed(){
 		if (mouseX>90 && mouseX<150 && mouseY>80 && mouseY<130 && moonPhase<30){
 			moonPhase++;
@@ -53,6 +58,7 @@ function mousePressed(){
 	    }
 }
 
+//draw moon and move lights to convey different moon phases
 function drawMoon(phase){
 	x=map((phase/10)+1.35,0,1,-1,1);
 	push();
@@ -68,6 +74,7 @@ function drawMoon(phase){
 		prevPhase=phase;
 }
 
+//draw moon phase number
 function drawText(){
 	textSize(72);
 		textFont(myFont);
@@ -82,6 +89,7 @@ function drawText(){
 	}
 }
 
+
 function drawButtons(){
  image(arrowButton,-220, -220,50,50);
 scale(1,-1);
@@ -89,6 +97,7 @@ image(arrowButton,-270, 170,50,50);
 }
 
 
+//class to draw ellipses at random x, y, z, and size values to resemble stars
 class stars{
 	constructor(){
 		this.x = random(-width*2,width*2);
