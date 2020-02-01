@@ -16,7 +16,7 @@ function preload(){
 }
 
 function setup(){
-	createCanvas(730,700,WEBGL);
+	createCanvas(630,600,WEBGL);
 	background(0);
 
 //create and draw an array of star objects
