@@ -23,6 +23,8 @@ function setup(){
 	for (let i =0;i<numStars;i++){
      star.push(new stars());
      star[i].display();
+
+     textFont(myFont);
 	}
 
 //draw input box and submit button using DOM library
@@ -38,6 +40,8 @@ function setup(){
 
 function draw(){
 drawText();
+textSize(18);
+text("Input a number between 1 & 30 to see corresponding moon phase",-width/2+18,-height/2+18);
 drawMoon(int(moonPhase));
 drawButtons();
 }
@@ -74,10 +78,9 @@ function drawMoon(phase){
 		prevPhase=phase;
 }
 
-//draw moon phase number
+//draw moon phase number and prompt and clear before writing new character
 function drawText(){
 	textSize(72);
-		textFont(myFont);
 		fill(255);
 		text(int(moonPhase), -260, -100);
 	if (prevPhase!=moonPhase){
