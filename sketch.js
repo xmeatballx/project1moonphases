@@ -11,7 +11,7 @@ let myFont;
 function preload(){
 	moonTexture = loadImage ('moontexture.jpeg');
 	arrowButton = loadImage ('arrow.png');
-	myFont=loadFont('SyrComadiabene.otf')
+	myFont=loadFont('SyrCOMAdiabene.otf')
 }
 
 function setup(){
@@ -48,13 +48,13 @@ function mousePressed(){
 			moonPhase++;
 	}
 
-	    if (mouseX>45 && mouseX<90 && mouseY>80 && mouseY<130 && moonPhase>-1){
+	    if (mouseX>45 && mouseX<90 && mouseY>80 && mouseY<130 && moonPhase>0){
 	    	moonPhase--;
 	    }
 }
 
 function drawMoon(phase){
-	x=map((phase/10)+1.3,0,1,-1,1);
+	x=map((phase/10)+1.35,0,1,-1,1);
 	push();
 	ortho();
 	ambientMaterial(250);
@@ -87,6 +87,8 @@ function drawButtons(){
 scale(1,-1);
 image(arrowButton,-270, 170,50,50);
 }
+
+
 class stars{
 	constructor(){
 		this.x = random(-width*2,width*2);
