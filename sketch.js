@@ -17,14 +17,12 @@ function preload(){
 
 function setup(){
 	createCanvas(630,600,WEBGL);
+	textFont(myFont);
 	background(0);
 
-//create and draw an array of star objects
+//create an array of star objects
 	for (let i =0;i<numStars;i++){
      star.push(new stars());
-     star[i].display();
-
-     textFont(myFont);
 	}
 
 //draw input box and submit button using DOM library
@@ -39,11 +37,11 @@ function setup(){
 }
 
 function draw(){
+background(0);
 drawText();
-textSize(18);
-text("Input a number between 1 & 30 to see corresponding moon phase",-width/2+18,-height/2+18);
 drawMoon(int(moonPhase));
 drawButtons();
+drawStars();
 }
 
 //set value from input box as moonPhase
@@ -81,15 +79,15 @@ function drawMoon(phase){
 //draw moon phase number and prompt and clear before writing new character
 function drawText(){
 	textSize(72);
-		fill(255);
-		text(int(moonPhase), -260, -100);
-	if (prevPhase!=moonPhase){
-		background(0);
-		drawMoon(int(moonPhase));
-		for (let i =0;i<numStars;i++){
-     star[i].display();
- }
-	}
+		if (prevPhase==moonPhase){
+			fill(255);
+			text(int(moonPhase), -260, -100);
+		} else {
+			fill(0);
+			rect(-260, -100,50,50);
+		}
+		textSize(18);
+text("Input a number between 1 & 30 to see corresponding moon phase",-width/2+18,-height/2+18);
 }
 
 
@@ -97,6 +95,12 @@ function drawButtons(){
  image(arrowButton,-220, -220,50,50);
 scale(1,-1);
 image(arrowButton,-270, 170,50,50);
+}
+
+function drawStars(){
+		for (let i =0;i<numStars;i++){
+     	star[i].display();
+	}
 }
 
 
