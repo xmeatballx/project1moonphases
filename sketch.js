@@ -46,7 +46,9 @@ drawStars();
 
 //set value from input box as moonPhase
 function phaseSet(){
+	if (input.value()<30){
 	moonPhase = int(input.value());
+	}	
 }
 
 //detect arrow button presses
@@ -79,13 +81,8 @@ function drawMoon(phase){
 //draw moon phase number and prompt and clear before writing new character
 function drawText(){
 	textSize(72);
-		if (prevPhase==moonPhase){
 			fill(255);
 			text(int(moonPhase), -260, -100);
-		} else {
-			fill(0);
-			rect(-260, -100,50,50);
-		}
 		textSize(18);
 text("Input a number between 1 & 30 to see corresponding moon phase",-width/2+18,-height/2+18);
 }
