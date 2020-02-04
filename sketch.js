@@ -1,13 +1,12 @@
 var moonsize=160;
 var moonPhase=0;
-let prevPhase;
-var x=0;
+var liteAngle=0;
+let orbitAngle=0;
 let moonTexture;
 let arrowButton;
 let star = [];
 let numStars=5000;
 let myFont;
-let orbitAngle=0;
 let moonButt=false;
 
 //load texture, arrow images, and font for moon phase number display
@@ -79,19 +78,18 @@ function mousePressed(){
 
 //draw moon and move lights to convey different moon phases
 function drawMoon(phase,sphereX,sphereY){
-	x=map((phase/10)+1.35,0,1,-1,1);
+	liteAngle=map((phase/10)+1.35,0,1,-1,1);
 	push();
 	translate(sphereX,sphereY);
 	ortho();
 	ambientMaterial(250);
 	lightFalloff(1.0, 1.0, 1.0)
-		directionalLight(250, 250, 250, cos(x), sin(orbitAngle), sin(x));
+		directionalLight(250, 250, 250, cos(liteAngle), sin(orbitAngle), sin(liteAngle));
 		ambientLight(10,10,0);
 		noStroke();
 		texture(moonTexture);
 		sphere(moonsize);
 		pop();
-		prevPhase=phase;
 }
 
 //draw moon phase number and prompt and clear before writing new character
@@ -122,6 +120,7 @@ function drawStars(){
 	}
 }
 
+//change simulated orbit angle
 function checkKeyDown(){
   if (keyIsDown(UP_ARROW)){
     orbitAngle+=.05;
