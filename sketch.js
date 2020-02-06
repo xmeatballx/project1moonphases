@@ -41,14 +41,8 @@ function setup(){
 function draw(){
 	background(0);
 	checkKeyDown();
+	drawMooon();
 	drawText();
-	if (moonButt==false){
-		drawMoon(int(moonPhase),0,0);
-	} else {
-		drawMoon(int(moonPhase),-50,0);
-		drawMoon(int(moonPhase),150,0);
-		print(moonButt);
-}
 	drawButtons();
 	drawStars();
 }
@@ -90,6 +84,15 @@ function drawMoon(phase,sphereX,sphereY){
 	texture(moonTexture);
 	sphere(moonsize);
 	pop();
+}
+
+function drawMooon(){
+		if (moonButt==false){
+		drawMoon(int(moonPhase),0,0);
+	} else {
+		drawMoon(int(moonPhase),-50,0);
+		drawMoon(int(moonPhase),150,0);
+}
 }
 
 //draw moon phase number and prompt and clear before writing new character
