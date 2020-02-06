@@ -26,16 +26,16 @@ function setup(){
 		star.push(new stars());
 	}
 
-//draw input box and submit button using DOM library
-	input = createInput();
-  	input.position(20, 35);
+  //draw input box and submit button using DOM library
+  input = createInput();
+  input.position(20, 35);
 
-  	button = createButton('submit');
-  	button.position(input.x + input.width, 35);
+  button = createButton('submit');
+  button.position(input.x + input.width, 35);
 
   //set phase every time a value is submitted via button
- 	 button.mousePressed(phaseSet);
-  	print(moonButt);
+  button.mousePressed(phaseSet);
+  print(moonButt);
 }
 
 function draw(){
@@ -66,7 +66,7 @@ function mousePressed(){
 	}
 
 	 if (mouseX>45 && mouseX<90 && mouseY>80 && mouseY<130 && moonPhase>0){
-	    	moonPhase--;
+		moonPhase--;
 	}
 }
 
@@ -87,11 +87,11 @@ function drawMoon(phase,sphereX,sphereY){
 }
 
 function drawMooon(){
-		if (moonButt==false){
-		drawMoon(int(moonPhase),0,0);
-	} else {
-		drawMoon(int(moonPhase),-50,0);
-		drawMoon(int(moonPhase),150,0);
+	if (moonButt==false){
+	drawMoon(int(moonPhase),0,0);
+} else {
+	drawMoon(int(moonPhase),-50,0);
+	drawMoon(int(moonPhase),150,0);
 }
 }
 
@@ -119,7 +119,7 @@ function drawButtons(){
 
 function drawStars(){
 	for (let i =0;i<numStars;i++){
-     		star[i].display();
+    star[i].display();
 	}
 }
 
@@ -127,16 +127,16 @@ function drawStars(){
 function checkKeyDown(){
 	if (keyIsDown(UP_ARROW)){
 		orbitAngle+=.05;
-  	} else if (keyIsDown(DOWN_ARROW)){
-  		orbitAngle-=.05;
+  } else if (keyIsDown(DOWN_ARROW)){
+  	orbitAngle-=.05;
  	}
 }
 
 function keyPressed() {
 	if (keyCode === UP_ARROW) {
 		orbitAngle+=.05;
-  	} else if (keyCode === DOWN_ARROW) {
-	  	orbitAngle-=.05;
+  } else if (keyCode === DOWN_ARROW) {
+	  orbitAngle-=.05;
 	}
 }
 
