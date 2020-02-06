@@ -101,7 +101,7 @@ function drawText(){
 		textSize(21);
 text("Input a number between 1 & 30 to see corresponding moon phase",-width/2+18,-height/2+18);
 textSize(23);
-text("Use arrow keys to change angle of orbit",-width/2+230,-height/2+50);
+text("Use arrow keys to change angle of orbit",-width/2+250,-height/2+50);
 	pop();
 }
 
