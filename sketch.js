@@ -100,8 +100,8 @@ function drawText(){
 			text(int(moonPhase), -310, -140);
 		textSize(21);
 text("Input a number between 1 & 30 to see corresponding moon phase",-width/2+18,-height/2+18);
-textSize(24);
-text("Use arrow keys to change angle of orbit",-width/2+220,-height/2+50);
+textSize(23);
+text("Use arrow keys to change angle of orbit",-width/2+230,-height/2+50);
 	pop();
 }
 
